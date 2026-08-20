@@ -9,7 +9,7 @@ const TotalProgress = () => {
         <span className="font-body-lg text-body-lg text-on-surface-variant mb-1">, 15 Pages</span>
       </div>
       <div className="w-full bg-surface-variant rounded-full h-3 mb-2 overflow-hidden">
-        <div className="bg-primary h-3 rounded-full" style={{ width: '65%' }}></div>
+        <div className="bg-primary h-3 rounded-full transition-all duration-1000 ease-out" style={{ width: '65%' }}></div>
       </div>
       <div className="flex justify-between font-label-md text-xs text-on-surface-variant mt-1">
         <span>Juz 30, 29, 28 Completed</span>

@@ -1,6 +1,20 @@
 import React from 'react'
 
 const AdminSideNavBar = () => {
+  const menuItems = [
+    { icon: 'dashboard', label: 'Overview', active: true, filled: true },
+    { icon: 'menu_book', label: 'Daily Setoran', active: false, filled: false },
+    { icon: 'auto_stories', label: 'Ziadah', active: false, filled: false },
+    { icon: 'history', label: "Muraja'ah", active: false, filled: false },
+    { icon: 'analytics', label: 'Report Cards', active: false, filled: false },
+    { icon: 'settings', label: 'Settings', active: false, filled: false },
+  ]
+
+  const footerItems = [
+    { icon: 'help', label: 'Support' },
+    { icon: 'logout', label: 'Logout' },
+  ]
+
   return (
     <nav className="hidden md:flex flex-col h-full py-6 border-r border-outline-variant dark:border-outline fixed left-0 top-0 w-[240px] bg-surface-container-low dark:bg-tertiary-container z-40">
       <div className="px-6 mb-8">
@@ -27,58 +41,41 @@ const AdminSideNavBar = () => {
       </div>
       <div className="flex-1 overflow-y-auto w-full">
         <ul className="flex flex-col gap-1 w-full pl-0">
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary border-l-4 border-secondary-container rounded-r-full font-label-md text-label-md hover:translate-x-1 duration-200" href="#">
-              <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>dashboard</span>
-              Overview
-            </a>
-          </li>
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all" href="#">
-              <span className="material-symbols-outlined">menu_book</span>
-              Daily Setoran
-            </a>
-          </li>
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all" href="#">
-              <span className="material-symbols-outlined">auto_stories</span>
-              Ziadah
-            </a>
-          </li>
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all" href="#">
-              <span className="material-symbols-outlined">history</span>
-              Muraja'ah
-            </a>
-          </li>
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all" href="#">
-              <span className="material-symbols-outlined">analytics</span>
-              Report Cards
-            </a>
-          </li>
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all" href="#">
-              <span className="material-symbols-outlined">settings</span>
-              Settings
-            </a>
-          </li>
+          {menuItems.map((item, idx) => (
+            <li key={idx} className="w-full pr-4">
+              <a
+                className={`flex items-center gap-3 px-4 py-3 font-label-md text-label-md hover:translate-x-1 duration-200 rounded-r-full transition-all ${
+                  item.active
+                    ? 'bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary border-l-4 border-secondary-container'
+                    : 'text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high'
+                }`}
+                href="#"
+              >
+                <span
+                  className="material-symbols-outlined"
+                  style={item.filled ? { fontVariationSettings: "'FILL' 1" } : undefined}
+                >
+                  {item.icon}
+                </span>
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="mt-auto px-0 w-full pt-4">
         <ul className="flex flex-col gap-1 w-full pl-0">
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all" href="#">
-              <span className="material-symbols-outlined">help</span>
-              Support
-            </a>
-          </li>
-          <li className="w-full pr-4">
-            <a className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all" href="#">
-              <span className="material-symbols-outlined">logout</span>
-              Logout
-            </a>
-          </li>
+          {footerItems.map((item, idx) => (
+            <li key={idx} className="w-full pr-4">
+              <a
+                className="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high hover:translate-x-1 duration-200 rounded-r-full font-label-md text-label-md transition-all"
+                href="#"
+              >
+                <span className="material-symbols-outlined">{item.icon}</span>
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

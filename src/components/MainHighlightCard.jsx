@@ -18,10 +18,10 @@ const MainHighlightCard = () => {
             <span className="text-primary font-bold">78%</span>
           </div>
           <div className="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
-            <div className="h-full bg-primary rounded-full" style={{ width: '78%' }}></div>
+            <div className="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style={{ width: '78%' }}></div>
           </div>
         </div>
-        <div className="flex gap-6 mt-4">
+        <div className="flex flex-wrap gap-6 mt-4">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-secondary-container"></div>
             <span className="font-label-md text-label-md text-on-surface-variant">Excellent (45%)</span>
@@ -29,6 +29,10 @@ const MainHighlightCard = () => {
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-primary-fixed-dim"></div>
             <span className="font-label-md text-label-md text-on-surface-variant">On Track (33%)</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-surface-dim"></div>
+            <span className="font-label-md text-label-md text-on-surface-variant">Needs Improvement (22%)</span>
           </div>
         </div>
       </div>
