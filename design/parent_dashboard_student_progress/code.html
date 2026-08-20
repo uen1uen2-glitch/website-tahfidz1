@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tahfidz Monitor - Parent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Noto+Serif:wght@400&amp;family=Libre+Caslon+Text:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#0b513d",
+                        "tertiary-container": "#424546",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-dim": "#d0daef",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffe088",
+                        "primary-fixed-dim": "#95d3ba",
+                        "background": "#f9f9ff",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-container-highest": "#d9e3f7",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#404944",
+                        "surface-variant": "#d9e3f7",
+                        "on-secondary-container": "#745c00",
+                        "on-tertiary-container": "#b0b2b3",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "primary": "#003527",
+                        "inverse-on-surface": "#ebf1ff",
+                        "outline-variant": "#bfc9c3",
+                        "on-background": "#121c2a",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#eff3ff",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container-high": "#dee9fd",
+                        "primary-fixed": "#b0f0d6",
+                        "tertiary": "#2c2f30",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#95d3ba",
+                        "surface": "#f9f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#121c2a",
+                        "surface-container": "#e6eeff",
+                        "surface-bright": "#f9f9ff",
+                        "on-primary-container": "#80bea6",
+                        "outline": "#707974",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#273140",
+                        "primary-container": "#064e3b",
+                        "on-primary-fixed": "#002117",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "secondary": "#735c00",
+                        "surface-tint": "#2b6954"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "quran-text": ["Noto Serif"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-xl": ["Libre Caslon Text"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "quran-text": ["28px", { "lineHeight": "48px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #f9f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-surface">
+<!-- SideNavBar (from JSON) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-[240px] bg-surface-container-low dark:bg-tertiary-container flex-col py-6 border-r border-outline-variant dark:border-outline z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined icon-fill">school</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Tahfidz Monitor</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Academic Portal</p>
+</div>
+</div>
+<button class="mx-6 mb-6 px-4 py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+<span class="material-symbols-outlined">add</span>
+            New Entry
+        </button>
+<ul class="flex-1 space-y-1 mt-4">
+<!-- Active: Overview -->
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary border-l-4 border-secondary-container rounded-r-full hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined icon-fill">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md text-label-md">Daily Setoran</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md text-label-md">Ziadah</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-md text-label-md">Muraja'ah</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Report Cards</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto px-4 space-y-1 border-t border-outline-variant pt-4 mx-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-tertiary transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[240px] px-margin-mobile md:px-gutter py-8 max-w-container-max mx-auto w-full">
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Parent Dashboard</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome back, Bapak Budi. Here's Ahmad's latest progress.</p>
+</div>
+<button class="px-6 py-3 border border-secondary text-primary rounded-lg font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                Download Rapor Tahfidz
+            </button>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Student Profile Summary (Col Span 4) -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm border-t-2 border-t-secondary-container relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full -mr-16 -mt-16 opacity-50"></div>
+<div class="flex items-center gap-4 mb-6 relative z-10">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-primary-container" data-alt="A high-quality, professional studio portrait of a young male student in a neat white uniform and peci (Islamic cap). The lighting is soft and bright, casting gentle shadows to create a modern, serene, and academic mood. The background is a clean, minimal light grey workspace to maintain focus on the student. Corporate modernism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDfVNX_xT-Wv88M-6VAbBJaAKo-1HvrewOhQdkiZZhkEFeN90e82VQvLdM0blCP2UQIwhJPmcsDFmj24WYZNxklfnVjFh7pHHgnwsaKlQ_r3nEMtGi_uTKJ1hW58fmz-Q9-k7M--_nCuHStgDjPSsa47FgLZNftoPA6rSXEVStIcfCxoibi2I-Z1JD5-N07ct6KfMzwAZ3B7mvaQl9AY5U0Gc2ZJc3tsB9QeWQ6h39O7d1NQsjWMme">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ahmad Zaki</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Class 5B - Ali bin Abi Thalib</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-surface-variant pb-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Wali Kelas</span>
+<span class="font-body-md text-body-md text-on-surface">Ust. Luqman Hakim</span>
+</div>
+<div class="flex justify-between items-center border-b border-surface-variant pb-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Target Hafalan</span>
+<span class="font-body-md text-body-md text-on-surface">5 Juz</span>
+</div>
+<div class="flex justify-between items-center pb-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Status</span>
+<span class="px-2 py-1 bg-[#e6f4ea] text-[#137333] rounded-full font-label-md text-xs">On Track</span>
+</div>
+</div>
+</div>
+<!-- Total Progress (Col Span 8) -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col justify-center">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Total Hafalan Progress</h3>
+<div class="flex items-end gap-2 mb-4">
+<span class="font-headline-xl text-headline-xl text-primary">3 Juz</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant mb-1">, 15 Pages</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-variant rounded-full h-3 mb-2 overflow-hidden">
+<div class="bg-primary h-3 rounded-full" style="width: 65%"></div>
+</div>
+<div class="flex justify-between font-label-md text-xs text-on-surface-variant mt-1">
+<span>Juz 30, 29, 28 Completed</span>
+<span>Target: 5 Juz by Year End</span>
+</div>
+</div>
+<!-- Visual Progress Chart Placeholder (Col Span 8) -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Progress Toward Graduation Target</h3>
+<div class="flex gap-2">
+<span class="w-3 h-3 rounded-full bg-primary mt-1"></span> <span class="font-label-md text-xs text-on-surface-variant">Actual</span>
+<span class="w-3 h-3 rounded-full bg-secondary mt-1 ml-2"></span> <span class="font-label-md text-xs text-on-surface-variant">Target</span>
+</div>
+</div>
+<!-- Simulating a chart with a background image placeholder -->
+<div class="bg-cover bg-center w-full h-48 rounded border border-surface-variant" data-alt="A clean, minimalist data visualization chart showing an upward trending line graph. The chart uses a deep emerald green line for actual progress and a dotted subtle gold line for the target. The background is pure white with faint light grey grid lines. The aesthetic is corporate modernist, precise, and serene, fitting an academic dashboard. Soft, high-key lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDycwyHY8wSt2A_s7Jkpd7ewKedw7Ys3TKYzrZvAVwkyeaVKiznoZiYo7WWIu1vHS-ekuQwwN44nfhhe2LoP1MYZ7F06Vtmb7HUCXkvqftTsbAaTJXZIGiFDoCRBB4b7hTrcZ6EVYiRfGk4M6QsBRSodPM3-JVT32TbcUYoHIDCR20Zg9rMHEKSeqF7qaV1t-uA4DSRl_78w-xa-7cF8yOUy5Kah3fuLk9PjjFIO4_ASNe7UF4QvG81')"></div>
+</div>
+<!-- Real-time History Feed (Col Span 4) -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col h-[400px]">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Recent Daily Setoran</h3>
+<div class="flex-1 overflow-y-auto pr-2 space-y-6">
+<!-- Feed Item 1 -->
+<div class="relative pl-6 border-l-2 border-primary-container pb-2">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-container border-2 border-white"></div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-on-surface">Surah Al-Mulk, Verses 1-15</span>
+<span class="font-label-md text-xs text-on-surface-variant">Today</span>
+</div>
+<div class="mb-2">
+<span class="px-2 py-0.5 bg-[#e6f4ea] text-[#137333] rounded-full font-label-md text-[10px]">Sangat Lancar</span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded-full font-label-md text-[10px] ml-1">Ziadah</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant italic">"Alhamdulillah bacaan sangat baik dan tartil. Pertahankan muraja'ah harian."</p>
+</div>
+<!-- Feed Item 2 -->
+<div class="relative pl-6 border-l-2 border-surface-variant pb-2">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface-variant border-2 border-white"></div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-on-surface">Surah Al-Qalam, Full</span>
+<span class="font-label-md text-xs text-on-surface-variant">Yesterday</span>
+</div>
+<div class="mb-2">
+<span class="px-2 py-0.5 bg-[#fff8e1] text-[#f57f17] rounded-full font-label-md text-[10px]">Lancar</span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded-full font-label-md text-[10px] ml-1">Muraja'ah</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant italic">"Perhatikan panjang pendek (mad) pada ayat 10-15."</p>
+</div>
+<!-- Feed Item 3 -->
+<div class="relative pl-6 border-l-2 border-surface-variant pb-2">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface-variant border-2 border-white"></div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-on-surface">Juz 29 Review</span>
+<span class="font-label-md text-xs text-on-surface-variant">Oct 12</span>
+</div>
+<div class="mb-2">
+<span class="px-2 py-0.5 bg-[#e6f4ea] text-[#137333] rounded-full font-label-md text-[10px]">Sangat Lancar</span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded-full font-label-md text-[10px] ml-1">Ujian Juz</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant italic">"Lulus ujian juz 29 dengan predikat Mumtaz. Masya Allah."</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
